@@ -466,7 +466,7 @@ def render_argument_hints(pfile, view, ftype, argpos):
       pfile.showing_arguments = False
     return
 
-  msg = ftype["name"] + "("
+  msg = (ftype["name"] + "(") if 'name' in ftype else ''
   i = 0
   for name, type in ftype["args"]:
     if i > 0: msg += ", "
